@@ -32,7 +32,13 @@
 				<svelte:component this={eachAlert.title}/>
 			{/if}
 			{#if eachAlert.undo != undefined}
-				<button class="svelte-alerter-component undo" on:click={eachAlert.undo}>UNDO</button>
+				<button class="svelte-alerter-component undo" on:click={() => {
+					alerts.update(val => {
+						delete val[eachAlert.id];
+						return val;
+					});
+					eachAlert.undo()
+				}}>UNDO</button>
 			{/if}
 		</div>
 	{/each}
