@@ -1,0 +1,27 @@
+{
+  "name": "svelte-alerter-component",
+  "version": "1.0.0",
+  "description": "Easily add custom alerts to your svelte app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vehmloewff/svelte-alerter-component.git"
+  },
+  "keywords": [
+    "alert",
+    "notification",
+    "svelte",
+    "app",
+    "component",
+    "easy"
+  ],
+  "author": "Vehmloewff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vehmloewff/svelte-alerter-component/issues"
+  },
+  "homepage": "https://github.com/Vehmloewff/svelte-alerter-component#readme"
+}
