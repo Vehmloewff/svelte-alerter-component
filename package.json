@@ -1,6 +1,6 @@
 {
   "name": "svelte-alerter-component",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Easily add custom alerts to your svelte app",
   "main": "index.js",
   "scripts": {
