@@ -9,7 +9,7 @@ $ npm i svelte-alerter-component --save
 Then, pop it into the component that suites you:
 ```html
 <script>
-	import AlerterComponent from 'svelte-alerter-component/component';
+	import AlerterComponent from 'svelte-alerter-component/component.svelte'; // In some cases you may need the pre compiled svelte: svelte-alerter-component/component
 </script>
 
 <Alerter/>
