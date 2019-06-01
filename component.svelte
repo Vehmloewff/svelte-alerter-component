@@ -38,6 +38,7 @@
 						return val;
 					});
 					eachAlert.undo()
+					eachAlert.callback();
 				}}>UNDO</button>
 			{/if}
 		</div>

@@ -2,15 +2,16 @@ const { alerts } = require('./alerter.store');
 
 module.exports = class Alerter {
 
-	constructor({title, style, time, undo}) {
+	constructor({title, style, time, undo}, callback) {
 		// Set the id
 		this.id = new Date().getTime() * Math.random();
+		this.callback = callback;
 
 		// Set the optional values
 		if (style == undefined) style = '';
 
 		alerts.update(vals => {
-			vals[this.id] = {title, style, time, id: this.id, hidden: false, timeCreated: new Date().getTime(), undo};
+			vals[this.id] = {title, style, time, id: this.id, hidden: false, timeCreated: new Date().getTime(), undo, callback};
 			return vals;
 		})
 
@@ -20,6 +21,7 @@ module.exports = class Alerter {
 					delete vals[this.id];
 					return vals;
 				})
+				callback();
 			}, time);
 		}
 	}
@@ -42,5 +44,6 @@ module.exports = class Alerter {
 			delete vals[this.id];
 			return vals;
 		})
+		this.callback();
 	}
 }

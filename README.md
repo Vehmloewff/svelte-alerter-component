@@ -24,6 +24,8 @@ new Alerter({
 	style: "background: green; border-radius: 1px;"  // Optional.  You can also style alerts with this css selector: .svelte-alerter-component.alert
 	time: 3000 // Alert will disapear in 3 seconds.  If no value is specified, the alert will not disapear automaticly
 	undo: () => {console.log("Undone!")}  // If a value is specified, an undo button will apear on the alert.  You can style this button with .svelte-alerter-component.undo
+}, () => {
+	console.log("Alert has been removed!")
 })
 
 // or
