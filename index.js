@@ -9,19 +9,20 @@ export default class Alerter {
 
 		// Set the optional values
 		if (style == undefined) style = styles;
-		if (time == undefined) time = 5000;
 
 		alerts.update(vals => {
 			vals[this.id] = {title, style, time, id: this.id, hidden: false, timeCreated: new Date().getTime()};
 			return vals;
 		})
 
-		setTimeout(() => {
-			alerts.update(vals => {
-				delete vals[this.id];
-				return vals;
-			})
-		}, time);
+		if (time != undefined) {
+			setTimeout(() => {
+				alerts.update(vals => {
+					delete vals[this.id];
+					return vals;
+				})
+			}, time);
+		}
 	}
 
 
