@@ -3,7 +3,7 @@ const { alerts } = require('./alerter.store');
 
 module.exports = class Alerter {
 
-	constructor({title, style, time}) {
+	constructor({title, style, time, undo}) {
 		// Set the id
 		this.id = new Date().getTime() * Math.random();
 
@@ -11,7 +11,7 @@ module.exports = class Alerter {
 		if (style == undefined) style = styles;
 
 		alerts.update(vals => {
-			vals[this.id] = {title, style, time, id: this.id, hidden: false, timeCreated: new Date().getTime()};
+			vals[this.id] = {title, style, time, id: this.id, hidden: false, timeCreated: new Date().getTime(), undo};
 			return vals;
 		})
 

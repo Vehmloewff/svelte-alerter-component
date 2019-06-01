@@ -25,11 +25,14 @@
 
 <div class="over">
 	{#each displayAlerts as eachAlert (eachAlert.id)}
-		<div style="{eachAlert.style}" animate:flip transition:fly={{y: 100}}>
+		<div class="svelte-alerter-component alert" style="{eachAlert.style}" animate:flip transition:fly={{y: 100}}>
 			{#if typeof eachAlert.title == 'string'}
 				{eachAlert.title}
 			{:else}
 				<svelte:component this={eachAlert.title}/>
+			{/if}
+			{#if eachAlert.undo != undefined}
+				<button class="svelte-alerter-component undo" on:click={eachAlert.undo}>UNDO</button>
 			{/if}
 		</div>
 	{/each}

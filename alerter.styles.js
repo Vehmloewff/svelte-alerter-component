@@ -1,1 +1,0 @@
-module.exports.styles = "background: var(--secondary); color: var(--primary2); padding: 10px; margin: 20px; border-radius: 3px; box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)";
