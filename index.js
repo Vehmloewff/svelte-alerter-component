@@ -1,7 +1,7 @@
-import { styles } from './alerter.styles';
-import { alerts } from './alerter.store';
+const { styles } = require('./alerter.styles');
+const { alerts } = require('./alerter.store');
 
-export default class Alerter {
+module.exports = class Alerter {
 
 	constructor({title, style, time}) {
 		// Set the id
