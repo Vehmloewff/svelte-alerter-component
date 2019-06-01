@@ -1,4 +1,3 @@
-const { styles } = require('./alerter.styles');
 const { alerts } = require('./alerter.store');
 
 module.exports = class Alerter {
@@ -8,7 +7,7 @@ module.exports = class Alerter {
 		this.id = new Date().getTime() * Math.random();
 
 		// Set the optional values
-		if (style == undefined) style = styles;
+		if (style == undefined) style = '';
 
 		alerts.update(vals => {
 			vals[this.id] = {title, style, time, id: this.id, hidden: false, timeCreated: new Date().getTime(), undo};
